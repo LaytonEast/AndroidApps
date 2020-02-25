@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fahrenheitIn = findViewById(R.id.temperature);
         f_c_label = findViewById(R.id.f_c);
+        getButton = findViewById(R.id.get_button);
         getButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
           if(!flag){
               double celcius = 0;
               celcius = (fahrenheit - 32.0) * 5.0/9.0;
-              fahrenheitIn.setText(String.format("% f, d", fahrenheit));
-              f_c_label.setText(String.format("% C, d", celcius));
+              fahrenheitIn.setText(String.format("%.2f F", fahrenheit));
+              f_c_label.setText(String.format("%.2f C", celcius));
           }
           else{
               Toast.makeText(this,"Missing field value", Toast.LENGTH_SHORT).show();

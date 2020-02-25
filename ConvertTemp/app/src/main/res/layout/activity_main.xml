@@ -47,16 +47,18 @@
             android:text="F to C"
             android:background="@android:color/holo_purple"
             android:layout_marginLeft="20dp"
-            android:id="@+id/f_c"
+            android:id="@+id/get_button"
             />
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="110dp"
             android:textSize="20sp"
             android:textColor="@android:color/darker_gray"
             android:text="to be computed"
             app:layout_constraintLeft_toRightOf="@id/f_c"
+            android:id="@+id/f_c"
+
             />
     </LinearLayout>
 
