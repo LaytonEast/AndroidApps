@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- row 1 -->
+    <TextView
+        android:id="@+id/la_label"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Enter your loan amount"
+        android:textColor="@android:color/holo_green_dark"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".01"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/loan_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="7"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/la_label"
+        app:layout_constraintStart_toEndOf="@+id/la_label"
+        />
+    <!-- row 2 -->
+    <TextView
+        android:id="@+id/apr_label"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="Enter your APR"
+        android:textColor="@android:color/holo_purple"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".11"
+        app:layout_constraintStart_toStartOf="@+id/la_label"
+        />
+    <EditText
+        android:id="@+id/apr_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="7"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/apr_label"
+        app:layout_constraintStart_toEndOf="@+id/apr_label"
+        />
+
+    <!-- row 3 -->
+    <TextView
+        android:id="@+id/ly_label"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="Enter your loan years"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".19"
+        app:layout_constraintStart_toStartOf="@+id/apr_label"
+        />
+    <EditText
+        android:id="@+id/loan_years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="7"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ly_label"
+        app:layout_constraintStart_toEndOf="@+id/ly_label" />
+    <!-- row 4 -->
+    <TextView
+        android:id="@+id/lp_label"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="Your loan payment"
+        android:textColor="@android:color/holo_purple"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".27"
+        app:layout_constraintStart_toStartOf="@+id/ly_label"/>
+    <EditText
+        android:id="@+id/loan_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="7"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lp_label"
+        app:layout_constraintStart_toEndOf="@+id/lp_label" />
+    <!-- row 5 -->
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="CALCULATE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".38"
+        app:layout_constraintStart_toStartOf="@+id/lp_label"/>
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="RESET"
+        app:layout_constraintBaseline_toBaselineOf="@+id/calculate_button"
+        app:layout_constraintStart_toEndOf="@+id/calculate_button"
+        />
+    <!--  android:onClick="reset_all" needs updating -->
+    <Button
+        android:id="@+id/table_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="AMORTIZATION TABLE"
+        app:layout_constraintBaseline_toBaselineOf="@+id/calculate_button"
+        app:layout_constraintStart_toEndOf="@+id/reset_button"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
