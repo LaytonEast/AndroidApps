@@ -12,11 +12,13 @@ public class MainActivity extends AppCompatActivity {
 
     EditText loanAmount, apr, loanYears, loanPayment;
     Button calculateButton, resetButton, tableButton;
-    String la_amountString, apr_amountString, ly_amountString, lp_amountString;
+    String la_amountString, apr_amountString, ly_amountString, lp_amountString, months_string;
+    String apr_string;
     static double la_amount = 0;
     static double apr_amount = 0;
     static int ly_amount = 0;
     static double lp_amount = 0;
+    static int months = 0;
     final static int RESULT_1 = 1;
 
     @Override
@@ -42,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 ly_amountString = loanYears.getText().toString();
                 ly_amount = Integer.parseInt(ly_amountString);
                 double apr_percent = apr_amount / 100;
-                int months = ly_amount * 12;
+                apr_string = Double.toString(apr_percent);
+                months = ly_amount * 12;
+                months_string = Integer.toString(months);
                 lp_amount = la_amount * ( apr_percent/12 + (apr_percent/12)/(Math.pow((1+apr_percent/12), months)-1));
                 lp_amountString = Double.toString(lp_amount);
                 display();
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Amortization.class);
                 intent.putExtra("la_AMT", la_amountString );
                 intent.putExtra("lp_AMT", lp_amountString );
+                intent.putExtra("MON", months_string );
+                intent.putExtra("APR", apr_string );
                 startActivityForResult(intent,RESULT_1);
             }
         });
